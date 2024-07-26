@@ -23,7 +23,6 @@ const decodeTheRing = function (s, p) {
     }
   }
 
-  // Check if we've reached the end of both the string and the pattern
   return sIndex === s.length && pIndex === p.length;
 
 };
