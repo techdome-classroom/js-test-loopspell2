@@ -13,7 +13,7 @@ const dfs = (i, j) => {
         return;
     }
 
-    grid[i][j] = '#'; // Mark as visited
+    grid[i][j] = '#'; 
 
     // Explore adjacent cells
     dfs(i + 1, j);
