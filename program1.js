@@ -8,6 +8,18 @@ const getTotalIsles = function (grid) {
   const cols = grid[0].length;
   let islands = 0;
 
+  const island = (i, j) => {
+    if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] !== 'L') {
+      return;
+    }
+  
+    grid[i][j] = '#';
+  
+    island(i + 1, j);
+    island(i - 1, j);
+    island(i, j + 1);
+    island(i, j - 1);
+  };
 
 
   for (let i = 0; i < rows; i++) {
@@ -23,17 +35,6 @@ const getTotalIsles = function (grid) {
 
 };
 
-const island = (i, j) => {
-  if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] !== 'L') {
-    return;
-  }
 
-  grid[i][j] = '#';
-
-  island(i + 1, j);
-  island(i - 1, j);
-  island(i, j + 1);
-  island(i, j - 1);
-};
 
 module.exports = getTotalIsles;
