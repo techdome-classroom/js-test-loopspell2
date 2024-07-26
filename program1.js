@@ -23,4 +23,17 @@ return islands;
 
 };
 
+const island = (i, j) => {
+  if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] !== 'L') {
+      return;
+  }
+
+  grid[i][j] = '#'; 
+
+  island(i + 1, j);
+  island(i - 1, j);
+  island(i, j + 1);
+  island(i, j - 1);
+};
+
 module.exports = getTotalIsles;
