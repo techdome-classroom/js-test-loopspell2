@@ -18,7 +18,7 @@ const island = (i, j) => {
     island(i + 1, j);
     island(i - 1, j);
     island(i, j + 1);
-    dfs(i, j - 1);
+    island(i, j - 1);
 };
 
 for (let i = 0; i < rows; i++) {
