@@ -8,6 +8,8 @@ const decodeTheRing = function (s, p) {
 
       if (pIndex === p.length - 1) return true;
 
+      //kuldeep
+      //kuld*p
       let nextChar = p[pIndex + 1];
       let nextCharIndex = s.indexOf(nextChar, sIndex);
 

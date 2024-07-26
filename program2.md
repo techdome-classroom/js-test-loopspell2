@@ -23,9 +23,3 @@ Message: "cb" Decoder Key: "?a" Match: False (the question mark can only replace
 Challenge:
 
 Given a secret message and a decoder key using these symbols, can you tell if the decoder key unlocks the message (meaning it matches the entire message)?
-
-karuna
-ka?una
-
-karuna
-kar*
