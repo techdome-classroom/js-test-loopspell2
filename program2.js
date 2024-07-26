@@ -5,7 +5,6 @@ const decodeTheRing = function (s, p) {
 
   while (sIndex < s.length && pIndex < p.length) {
     if (p[pIndex] === '*') {
-      // If we're at the end of the pattern, it matches the rest of the string
       if (pIndex === p.length - 1) return true;
 
       // Find the next non-* character in the pattern
