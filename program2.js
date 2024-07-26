@@ -7,16 +7,6 @@ const decodeTheRing = function (s, p) {
     if (p[pIndex] === '*') {
       if (pIndex === p.length - 1) return true;
 
-      // Find the next non-* character in the pattern
-      let nextChar = p[pIndex + 1];
-      let nextCharIndex = s.indexOf(nextChar, sIndex);
-
-      // If we can't find the next character, no match
-      if (nextCharIndex === -1) return false;
-
-      // Move string index to just before the next matching character
-      sIndex = nextCharIndex;
-      pIndex++;
     } else if (p[pIndex] === '?' || p[pIndex] === s[sIndex]) {
       sIndex++;
       pIndex++;
