@@ -5,13 +5,12 @@ const decodeTheRing = function (s, p) {
 
   while (sIndex < s.length && pIndex < p.length) {
     if (p[pIndex] === '*') {
-      
+
       if (pIndex === p.length - 1) return true;
 
       let nextChar = p[pIndex + 1];
       let nextCharIndex = s.indexOf(nextChar, sIndex);
 
-      // If we can't find the next character, no match
       if (nextCharIndex === -1) return false;
 
       // Move string index to just before the next matching character
