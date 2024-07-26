@@ -13,7 +13,6 @@ const decodeTheRing = function (s, p) {
 
       if (nextCharIndex === -1) return false;
 
-      // Move string index to just before the next matching character
       sIndex = nextCharIndex;
       pIndex++;
     } else if (p[pIndex] === '?' || p[pIndex] === s[sIndex]) {
