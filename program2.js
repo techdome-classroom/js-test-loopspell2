@@ -1,6 +1,6 @@
 const decodeTheRing = function (s, p) {
 
-  let s_index = 0;
+  let sIndex = 0;
   let pIndex = 0;
 
   while (sIndex < s.length && pIndex < p.length) {
@@ -16,7 +16,7 @@ const decodeTheRing = function (s, p) {
       if (nextCharIndex === -1) return false;
 
       // kuldeeeep
-      // kuld*p
+      // kuld
 
       sIndex = nextCharIndex;
       pIndex++;
