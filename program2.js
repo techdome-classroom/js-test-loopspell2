@@ -16,7 +16,7 @@ const decodeTheRing = function (s, p) {
       if (nextCharIndex === -1) return false;
 
       // kuldeeeep
-      // kuld
+      // kuld*
 
       sIndex = nextCharIndex;
       pIndex++;
