@@ -8,34 +8,34 @@ module.exports = decodeTheRing;
 
 /**
  * const decodeTheRing = function (s, p) {
-  const m = s.length;
-  const n = p.length;
-  
-  // Initialize the DP table
-  const dp = Array(m + 1).fill().map(() => Array(n + 1).fill(false));
-  
-  // Empty pattern matches empty string
-  dp[0][0] = true;
-  
-  // Handle patterns starting with *
-  for (let j = 1; j <= n; j++) {
-      if (p[j - 1] === '*') {
-          dp[0][j] = dp[0][j - 1];
-      }
-  }
-  
-  // Fill the DP table
-  for (let i = 1; i <= m; i++) {
-      for (let j = 1; j <= n; j++) {
-          if (p[j - 1] === '*') {
-              dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
-          } else if (p[j - 1] === '?' || s[i - 1] === p[j - 1]) {
-              dp[i][j] = dp[i - 1][j - 1];
-          }
-      }
-  }
-  
-  return dp[m][n];
+    let sIndex = 0;
+    let pIndex = 0;
+
+    while (sIndex < s.length && pIndex < p.length) {
+        if (p[pIndex] === '*') {
+            // If we're at the end of the pattern, it matches the rest of the string
+            if (pIndex === p.length - 1) return true;
+            
+            // Find the next non-* character in the pattern
+            let nextChar = p[pIndex + 1];
+            let nextCharIndex = s.indexOf(nextChar, sIndex);
+            
+            // If we can't find the next character, no match
+            if (nextCharIndex === -1) return false;
+            
+            // Move string index to just before the next matching character
+            sIndex = nextCharIndex;
+            pIndex++;
+        } else if (p[pIndex] === '?' || p[pIndex] === s[sIndex]) {
+            sIndex++;
+            pIndex++;
+        } else {
+            return false;
+        }
+    }
+
+    // Check if we've reached the end of both the string and the pattern
+    return sIndex === s.length && pIndex === p.length;
 };
 
 module.exports = decodeTheRing;
