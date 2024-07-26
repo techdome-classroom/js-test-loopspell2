@@ -6,7 +6,7 @@ const decodeTheRing = function (s, p) {
   while (sIndex < s.length && pIndex < p.length) {
     if (p[pIndex] === '*') {
       if (pIndex === p.length - 1) return true;
-
+      
     } else if (p[pIndex] === '?' || p[pIndex] === s[sIndex]) {
       sIndex++;
       pIndex++;
