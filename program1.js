@@ -12,9 +12,9 @@ const getTotalIsles = function (grid) {
     if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] !== 'L') {
       return;
     }
-  
+
     grid[i][j] = '#';
-  
+
     island(i + 1, j);
     island(i - 1, j);
     island(i, j + 1);
