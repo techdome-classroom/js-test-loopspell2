@@ -1,6 +1,6 @@
 const decodeTheRing = function (s, p) {
 
-  let sIndex = 0;
+  let s_index = 0;
   let pIndex = 0;
 
   while (sIndex < s.length && pIndex < p.length) {
