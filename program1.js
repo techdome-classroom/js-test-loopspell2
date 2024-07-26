@@ -13,7 +13,7 @@ let islands = 0;
 for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
         if (grid[i][j] === 'L') {
-            dfs(i, j);
+            island(i, j);
             islands++;
         }
     }
