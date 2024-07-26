@@ -15,6 +15,8 @@ const decodeTheRing = function (s, p) {
 
       if (nextCharIndex === -1) return false;
 
+      
+
       sIndex = nextCharIndex;
       pIndex++;
     } else if (p[pIndex] === '?' || p[pIndex] === s[sIndex]) {
